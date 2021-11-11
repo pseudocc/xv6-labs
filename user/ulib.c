@@ -134,3 +134,27 @@ memcpy(void *dst, const void *src, uint n)
 {
   return memmove(dst, src, n);
 }
+
+int itoa(int num, char* str) {
+  int sum = num;
+  int i = 0;
+  int d;
+
+  do {
+    d = sum % 10;
+    str[i++] = '0' + d;
+    sum /= 10;
+  } while(sum);
+
+  if (num < 0)
+    str[i++] = '-';
+  str[i] = '\0';
+
+  for (int x = 0; x < i; x++) {
+    char t = str[x];
+    str[x] = str[i-1-x];
+    str[i-1-x] = t;
+  }
+
+  return i;
+}
