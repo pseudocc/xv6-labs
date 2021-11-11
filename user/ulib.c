@@ -150,7 +150,7 @@ int itoa(int num, char* str) {
     str[i++] = '-';
   str[i] = '\0';
 
-  for (int x = 0; x < i; x++) {
+  for (int x = 0; x < (i >> 1); x++) {
     char t = str[x];
     str[x] = str[i-1-x];
     str[i-1-x] = t;
