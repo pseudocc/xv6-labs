@@ -2,9 +2,7 @@
 #include "kernel/stat.h"
 #include "user/user.h"
 
-int
-main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   int i;
   char say[] = "(nothing happens for a little while)\n";
   if (argc < 2)
