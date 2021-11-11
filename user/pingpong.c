@@ -9,7 +9,7 @@ void on_receive(char signal) {
   const char rbody[] = ": received ";
   char a[12];
   write(1, a, itoa(getpid(), a));
-  write(1, rbody, sizeof(rbody));
+  write(1, rbody, sizeof(rbody) - 1);
 
 #define handle(type)        \
   case type:                \
