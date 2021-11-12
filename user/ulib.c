@@ -32,6 +32,30 @@ strlen(const char *s)
   return n;
 }
 
+char* strsep(char** strp, const char* delim) {
+  char* s = *strp;
+  int i;
+  int j;
+
+  j = 0;
+  while (s[j] != '\0') {
+    i = 0;
+    while (s[j] != delim[i] && delim[i] != '\0')
+      i++;
+
+    if (delim[i] != '\0') {
+      s[j++] = '\0';
+      *strp = s + j;
+      return s;
+    }
+    else
+      j++;
+  }
+
+  *strp = (void*)0;
+  return s;
+}
+
 void*
 memset(void *dst, int c, uint n)
 {
