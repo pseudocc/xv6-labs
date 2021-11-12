@@ -34,6 +34,7 @@ void fprintf(int, const char*, ...);
 void printf(const char*, ...);
 char* gets(char*, int max);
 uint strlen(const char*);
+char* strsep(char**, const char*);
 void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
