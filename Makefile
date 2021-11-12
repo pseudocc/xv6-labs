@@ -99,6 +99,10 @@ XCFLAGS += -DSOL_$(LABUPPER) -DLAB_$(LABUPPER)
 endif
 
 CFLAGS += $(XCFLAGS)
+ifdef DEBUG
+CFLAGS += -DDEBUG
+endif
+
 CFLAGS += -MD
 CFLAGS += -mcmodel=medany
 CFLAGS += -ffreestanding -fno-common -nostdlib -mno-relax
@@ -196,6 +200,7 @@ UPROGS=\
 	$U/_sleep\
 	$U/_pingpong\
 	$U/_primes\
+	$U/_find\
 
 
 
