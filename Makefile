@@ -103,6 +103,10 @@ ifdef DEBUG
 CFLAGS += -DDEBUG
 endif
 
+ifdef DEBUG
+CFLAGS += -DDEBUG
+endif
+
 CFLAGS += -MD
 CFLAGS += -mcmodel=medany
 CFLAGS += -ffreestanding -fno-common -nostdlib -mno-relax
