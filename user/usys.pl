@@ -14,6 +14,16 @@ sub entry {
     print " ecall\n";
     print " ret\n";
 }
+
+sub entry_alter {
+    my $name = shift;
+    my $define = shift;
+    print ".global $name\n";
+    print "${name}:\n";
+    print " li a7, $define\n";
+    print " ecall\n";
+    print " ret\n";
+}
 	
 entry("fork");
 entry("exit");
@@ -37,3 +47,4 @@ entry("sbrk");
 entry("sleep");
 entry("uptime");
 entry("trace");
+entry_alter("sysinfo", "SYS_info");
